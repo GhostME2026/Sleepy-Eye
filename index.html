@@ -1,0 +1,2358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleepy Eye Guest House | Luxury Accommodation in Pantang West, Accra Ghana</title>
+    <meta name="description" content="Sleepy Eye Guest House offers luxury accommodation in Pantang West, Greater Accra. Premium rooms, free Wi-Fi, secure parking, and exceptional service. Book now via WhatsApp!">
+    <meta name="keywords" content="Sleepy Eye Guest House, luxury guest house Pantang West, guest house Accra Ghana, hotel near me, accommodation Greater Accra, best guest house Pantang West, affordable luxury hotel Accra, Sleepy Eye Hotel, guest house with parking Accra, rooms in Pantang West, Pantang West, Adenta Municipal hotel, guest house near Accra, budget hotel Pantang West, executive suite Accra, family room Ghana">
+    <meta name="author" content="Sleepy Eye Guest House">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="GH-AA">
+    <meta name="geo.placename" content="Pantang West, Greater Accra">
+    <meta name="geo.position" content="5.7334373;-0.1852092">
+    <meta name="ICBM" content="5.7334373, -0.1852092">
+    <meta property="og:title" content="Sleepy Eye Guest House | Luxury Accommodation in Pantang West, Accra">
+    <meta property="og:description" content="Experience premium comfort at Sleepy Eye Guest House. Located in Pantang West, Greater Accra. Book your stay today!">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GH">
+    <meta property="og:url" content="https://sleepyeyeguesthouse.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sleepy Eye Guest House | Luxury Accommodation in Pantang West">
+    <meta name="twitter:description" content="Premium guest house in Pantang West, Greater Accra. Comfort, security, and exceptional service.">
+    <link rel="canonical" href="https://sleepyeyeguesthouse.com">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23D4A574'/%3E%3Cpath d='M35 55 Q50 35 65 55 Q50 45 35 55' fill='%23FFF8E7'/%3E%3Ccircle cx='40' cy='42' r='3' fill='%23FFF8E7'/%3E%3Ccircle cx='60' cy='42' r='3' fill='%23FFF8E7'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #D4A574;
+            --accent-light: #E8C9A0;
+            --gold: #C9A96E;
+            --cream: #FFF8E7;
+            --white: #ffffff;
+            --text-dark: #1a1a2e;
+            --text-light: #f5f5f5;
+            --text-muted: #888;
+            --gradient-hero: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --gradient-gold: linear-gradient(135deg, #D4A574 0%, #C9A96E 50%, #B8956A 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.15);
+            --shadow-gold: 0 0 30px rgba(212,165,116,0.3);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        /* Ensure content is visible even if JS fails */
+        .service-box, .room-card-full, .gallery-item, .testimonial-card, .contact-card {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+        /* Sticky Booking Bar */
+        .booking-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 10px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212,165,116,0.2);
+            transform: translateY(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .booking-bar.visible { transform: translateY(0); }
+        .booking-bar .logo-small {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .booking-bar .logo-small i { 
+            color: var(--gold); 
+            font-size: 1.3rem;
+        }
+        .booking-bar .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .booking-bar .logo-main {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+        .booking-bar .logo-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+        .booking-bar .bar-nav {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-left: auto;
+            margin-right: 24px;
+        }
+        .booking-bar .bar-nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            position: relative;
+            padding: 4px 0;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+        }
+        .booking-bar .bar-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; left: 0;
+            width: 0; height: 2px;
+            background: var(--gradient-gold);
+            transition: width 0.3s ease;
+            border-radius: 1px;
+        }
+        .booking-bar .bar-nav a:hover::after { width: 100%; }
+        .booking-bar .bar-nav a:hover { color: var(--accent-light); }
+        .btn-book {
+            background: var(--gradient-gold);
+            color: var(--primary);
+            padding: 10px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-book::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+        .btn-book:hover::before { left: 100%; }
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--accent-light);
+        }
+
+        /* Navigation */
+        .main-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 999;
+            padding: 20px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+        .main-nav.scrolled {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 12px 48px;
+            box-shadow: var(--shadow-soft);
+        }
+        .main-nav .logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .main-nav .logo i { color: var(--accent); font-size: 1.5rem; }
+        .logo-text-main {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+        .logo-line1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .logo-line2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 1px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition-smooth);
+            text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
+            background: var(--gradient-gold);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--accent-light); }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0; right: -100%;
+            width: 80%; max-width: 350px;
+            height: 100vh;
+            background: var(--gradient-hero);
+            z-index: 1002;
+            padding: 80px 32px 32px;
+            transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 24px; right: 24px;
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu .close-btn:hover { transform: rotate(90deg); }
+        .mobile-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(212,165,116,0.2);
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .mobile-menu a:hover { color: var(--accent); padding-left: 10px; }
+        .mobile-menu .mobile-book {
+            margin-top: auto;
+            background: var(--gradient-gold);
+            color: var(--primary);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .mobile-menu .mobile-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(212,165,116,0.2);
+        }
+        .mobile-menu .mobile-contact a {
+            font-size: 0.9rem;
+            border: none;
+            padding: 8px 0;
+        }
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1001;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .overlay.active { opacity: 1; pointer-events: all; }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+        .hero-bg img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5);
+            animation: kenBurns 20s ease-in-out infinite alternate;
+        }
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(26,26,46,0.4) 0%, rgba(26,26,46,0.7) 50%, rgba(26,26,46,0.95) 100%);
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 24px;
+            margin-top: -195px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212,165,116,0.15);
+            border: 1px solid rgba(212,165,116,0.3);
+            color: var(--accent-light);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 1s ease;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            font-weight: 700;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        .hero h1 span {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: var(--primary);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.6s;
+        }
+        .btn-primary:hover::before { left: 100%; }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212,165,116,0.4);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent);
+            color: var(--accent-light);
+        }
+
+        /* Room Preview Gallery */
+        .room-preview {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+            width: 90%;
+            max-width: 1000px;
+        }
+        .room-slider {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 10px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .room-slider::-webkit-scrollbar { display: none; }
+        .room-card {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        .room-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .room-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .room-card:hover img { transform: scale(1.1); }
+        .room-card .room-info {
+            padding: 16px;
+            color: var(--white);
+        }
+        .room-card .room-info h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+        .room-card .room-info p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            margin: 0;
+        }
+        .room-card .room-price {
+            position: absolute;
+            top: 12px; right: 12px;
+            background: var(--gradient-gold);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Styles */
+        section { padding: 100px 24px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px; left: 50%;
+            transform: translateX(-50%);
+            width: 60px; height: 3px;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 20px auto 0;
+            font-size: 1.1rem;
+        }
+        .section-header .google-rating + p {
+            margin-bottom: 0;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -100px; right: -100px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(212,165,116,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .about-image:hover img { transform: scale(1.05); }
+        .about-image .float-card {
+            position: absolute;
+            bottom: -20px; right: -20px;
+            background: var(--white);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+            border-left: 4px solid var(--accent);
+        }
+        .about-image .float-card h4 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .about-image .float-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .about-content h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--cream);
+            border-radius: 12px;
+            transition: var(--transition-smooth);
+            cursor: default;
+        }
+        .feature-item:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        .feature-item:hover span { color: var(--accent-light); }
+        .feature-item i {
+            width: 40px; height: 40px;
+            background: var(--gradient-gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .feature-item span {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+        .feature-item:hover span { color: var(--white); }
+
+        /* Rooms Section */
+        .rooms {
+            background: linear-gradient(to bottom, var(--cream) 0%, var(--white) 100%);
+        }
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .room-card-full {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: var(--transition-smooth);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .room-card-full:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        .room-card-full .room-img {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+        .room-card-full .room-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .room-card-full:hover .room-img img { transform: scale(1.1); }
+        .room-card-full .room-badge {
+            position: absolute;
+            top: 16px; left: 16px;
+            background: var(--gradient-gold);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .room-card-full .room-details {
+            padding: 24px;
+        }
+        .room-card-full .room-details h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .room-card-full .room-details p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+        .room-amenities {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .room-amenities span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: var(--cream);
+            padding: 6px 12px;
+            border-radius: 8px;
+        }
+        .room-amenities span i { color: var(--accent); font-size: 0.85rem; }
+        .room-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        .room-price-tag {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .room-price-tag span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .btn-room {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-room:hover {
+            background: var(--gradient-gold);
+            color: var(--primary);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--primary);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(212,165,116,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .services .section-header h2 { color: var(--white); }
+        .services .section-header p { color: rgba(255,255,255,0.7); }
+        .services .section-header h2::after { background: var(--gradient-gold); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        .service-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212,165,116,0.15);
+            border-radius: 20px;
+            padding: 40px 24px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--gradient-gold);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+        .service-box:hover::before { opacity: 1; }
+        .service-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+        .service-box > * { position: relative; z-index: 1; }
+        .service-box:hover h3, .service-box:hover p { color: var(--primary); }
+        .service-box:hover .service-icon {
+            background: var(--primary);
+            color: var(--accent);
+        }
+        .service-icon {
+            width: 70px; height: 70px;
+            background: rgba(212,165,116,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: var(--transition-smooth);
+        }
+        .service-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--white);
+            transition: color 0.4s ease;
+        }
+        .service-box p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            transition: color 0.4s ease;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--white);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 250px;
+            gap: 16px;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        .gallery-item:nth-child(4) { grid-column: span 2; }
+        .gallery-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,26,46,0.8) 0%, transparent 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+        .gallery-overlay p {
+            color: var(--accent-light);
+            font-size: 0.85rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+        }
+        .google-rating {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .rating-oval {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            border: 2px solid rgba(212,165,116,0.3);
+            border-radius: 50px;
+            padding: 10px 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: var(--transition-smooth);
+            cursor: default;
+        }
+        .rating-oval:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(212,165,116,0.2);
+            border-color: var(--accent);
+        }
+        .rating-oval > i.fa-google {
+            color: #4285F4;
+            font-size: 1.4rem;
+        }
+        .rating-stars {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .rating-score {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .star-row {
+            display: flex;
+            gap: 2px;
+        }
+        .star-row i {
+            color: var(--gold);
+            font-size: 0.7rem;
+        }
+        .rating-count {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            border-left: 1px solid rgba(0,0,0,0.1);
+            padding-left: 12px;
+            margin-left: 4px;
+        }
+        .testimonials-slider {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 20px 10px;
+            scrollbar-width: none;
+        }
+        .testimonials-slider::-webkit-scrollbar { display: none; }
+        .testimonial-card {
+            flex: 0 0 340px;
+            scroll-snap-align: start;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px 28px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+        .testimonial-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 4px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .testimonial-card:hover::after {
+            transform: scaleX(1);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(212,165,116,0.15), 0 10px 20px rgba(0,0,0,0.08);
+            border-color: rgba(212,165,116,0.2);
+        }
+        .testimonial-card:hover .author-avatar {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 8px 20px rgba(212,165,116,0.4);
+        }
+        .testimonial-card:hover .stars i {
+            animation: starPop 0.4s ease forwards;
+        }
+        .testimonial-card:hover .stars i:nth-child(1) { animation-delay: 0s; }
+        .testimonial-card:hover .stars i:nth-child(2) { animation-delay: 0.05s; }
+        .testimonial-card:hover .stars i:nth-child(3) { animation-delay: 0.1s; }
+        .testimonial-card:hover .stars i:nth-child(4) { animation-delay: 0.15s; }
+        .testimonial-card:hover .stars i:nth-child(5) { animation-delay: 0.2s; }
+        @keyframes starPop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.4) rotate(15deg); }
+            100% { transform: scale(1.1); }
+        }
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 16px; left: 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.15;
+            line-height: 1;
+            transition: all 0.4s ease;
+        }
+        .testimonial-card:hover::before {
+            opacity: 0.3;
+            transform: translateY(-5px) rotate(-5deg);
+        }
+        .stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+        .stars i {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+        .testimonial-text {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.65;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .author-avatar {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--gradient-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .author-info h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+        .author-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75rem;
+            color: #28a745;
+            margin-top: 4px;
+        }
+
+        /* Location Section */
+        .location {
+            background: var(--white);
+            padding-bottom: 100px;
+        }
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+        .location-info {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .location-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .location-info p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+        }
+        .location-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: var(--cream);
+            border-radius: 12px;
+            transition: var(--transition-smooth);
+        }
+        .location-detail:hover {
+            background: var(--primary);
+            transform: translateX(5px);
+        }
+        .location-detail:hover h4, .location-detail:hover p { color: var(--white); }
+        .location-detail:hover i { background: var(--accent); color: var(--primary); }
+        .location-detail i {
+            width: 45px; height: 45px;
+            background: var(--gradient-gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1rem;
+            flex-shrink: 0;
+            transition: var(--transition-smooth);
+        }
+        .location-detail h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+            transition: color 0.4s ease;
+        }
+        .location-detail p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+            transition: color 0.4s ease;
+        }
+        .map-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            height: 100%;
+            min-height: 480px;
+        }
+        .map-container iframe {
+            width: 100%; height: 100%;
+            border: none;
+            filter: grayscale(0.2);
+        }
+
+        /* Contact Section - Compact & Cute */
+        .contact {
+            background: var(--gradient-hero);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            padding: 80px 24px 60px;
+        }
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -200px; right: -200px;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(212,165,116,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .contact .section-header h2 { color: var(--white); }
+        .contact .section-header p { color: rgba(255,255,255,0.7); }
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 16px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(212,165,116,0.2);
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            flex: 1;
+            max-width: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .contact-card:hover::before { transform: scaleX(1); }
+        .contact-card:hover {
+            background: rgba(212,165,116,0.12);
+            transform: translateY(-6px) scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 0 15px 35px rgba(212,165,116,0.2);
+        }
+        .contact-card i {
+            width: 44px; height: 44px;
+            background: var(--gradient-gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            color: var(--primary);
+            transition: transform 0.4s ease;
+            box-shadow: 0 4px 15px rgba(212,165,116,0.3);
+        }
+        .contact-card:hover i { 
+            transform: scale(1.15) rotate(-5deg); 
+            box-shadow: 0 6px 20px rgba(212,165,116,0.4);
+        }
+        .contact-card h3 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        .contact-card p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.75rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 36px;
+        }
+        .social-links a {
+            width: 44px; height: 44px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(212,165,116,0.25);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            background: var(--gradient-gold);
+            color: var(--primary);
+            transform: translateY(-4px) rotate(8deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(212,165,116,0.35);
+            border-color: transparent;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                gap: 12px;
+            }
+            .contact-card {
+                min-width: 140px;
+                padding: 20px 14px;
+                max-width: none;
+                flex: 1 1 140px;
+            }
+            .contact-card i {
+                width: 38px; height: 38px;
+                font-size: 1rem;
+            }
+            .contact-card h3 { font-size: 0.85rem; }
+            .contact-card p { font-size: 0.7rem; }
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f1a;
+            color: rgba(255,255,255,0.6);
+            padding: 60px 24px 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+        .footer-col a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            width: 50px; height: 50px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow-gold);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            z-index: 998;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.animate {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .reveal.animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .about-image { order: -1; }
+            .location-grid { grid-template-columns: 1fr; }
+            .map-container { border-radius: 20px; margin-top: 20px; min-height: 350px; }
+            .location { padding-bottom: 60px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+            .gallery-item:nth-child(4) { grid-column: span 1; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 1024px) {
+            .booking-bar .bar-nav { display: none; }
+        }
+        @media (max-width: 768px) {
+            .main-nav { padding: 16px 24px; }
+            .main-nav.scrolled { padding: 12px 24px; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .booking-bar { padding: 10px 16px; }
+            .booking-bar .bar-nav { display: none; }
+            .hero { min-height: 600px; }
+            .room-preview { display: none; }
+            .features-list { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; }
+            .testimonial-card { flex: 0 0 320px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            section { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Booking Bar -->
+    <div class="booking-bar" id="bookingBar">
+        <a href="#home" class="logo-small">
+            <i class="fas fa-moon"></i>
+            <div class="logo-text">
+                <span class="logo-main">Sleepy Eye</span>
+                <span class="logo-sub">Guest House</span>
+            </div>
+        </a>
+        <div class="bar-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#rooms">Rooms</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#location">Location</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a href="https://wa.me/233592864294?text=Hello%20Sleepy%20Eye%20Guest%20House,%20I%20would%20like%20to%20book%20a%20room.%20Please%20assist%20me." class="btn-book" target="_blank">
+            <i class="fab fa-whatsapp"></i> Book Now
+        </a>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <a href="#home" class="logo">
+            <i class="fas fa-moon"></i>
+            <div class="logo-text-main">
+                <span class="logo-line1">Sleepy Eye</span>
+                <span class="logo-line2">Guest House</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#rooms"><i class="fas fa-bed"></i> Rooms</a>
+        <a href="#services"><i class="fas fa-concierge-bell"></i> Services</a>
+        <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
+        <a href="#testimonials"><i class="fas fa-star"></i> Reviews</a>
+        <a href="#location"><i class="fas fa-map-marker-alt"></i> Location</a>
+        <a href="#contact"><i class="fas fa-phone"></i> Contact</a>
+        <a href="https://wa.me/233592864294?text=Hello%20Sleepy%20Eye%20Guest%20House,%20I%20would%20like%20to%20book%20a%20room." class="mobile-book" target="_blank">
+            <i class="fab fa-whatsapp"></i> Book Now on WhatsApp
+        </a>
+        <div class="mobile-contact">
+            <a href="tel:+233592864294"><i class="fas fa-phone"></i> 0592 864 294</a>
+            <a href="mailto:sleepyeyeguesthouse@gmail.com"><i class="fas fa-envelope"></i> sleepyeyeguesthouse@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="img/Exterior1.jpg" alt="Sleepy Eye Guest House Entrance" loading="lazy">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i> Premium Guest House in Pantang West, Accra
+            </div>
+            <h1>Rest in <span>Luxury</span><br>Wake in Comfort</h1>
+            <p>Experience the perfect blend of elegance and tranquility at Sleepy Eye Guest House. Located in the heart of Pantang West, Adenta Municipal, Greater Accra.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/233592864294?text=Hello%20Sleepy%20Eye%20Guest%20House,%20I%20would%20like%20to%20book%20a%20room.%20Please%20assist%20me." class="btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Book Your Stay
+                </a>
+                <a href="#rooms" class="btn-secondary">
+                    <i class="fas fa-bed"></i> View Rooms
+                </a>
+            </div>
+        </div>
+        <div class="room-preview">
+            <div class="room-slider">
+                <div class="room-card">
+                    <img src="img/Rooms1.jpg" alt="Deluxe Room" loading="lazy">
+                    <span class="room-price">From GHS 600</span>
+                    <div class="room-info">
+                        <h4>Deluxe Room</h4>
+                        <p>Spacious comfort with modern amenities</p>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=350&q=75" alt="Executive Suite" loading="lazy">
+                    <span class="room-price">From GHS 1200</span>
+                    <div class="room-info">
+                        <h4>Executive Suite</h4>
+                        <p>Premium luxury with living area</p>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <img src="img/Rooms2.jpg" alt="Standard Room" loading="lazy">
+                    <span class="room-price">From GHS 400</span>
+                    <div class="room-info">
+                        <h4>Standard Room</h4>
+                        <p>Cozy and affordable comfort</p>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=350&q=75" alt="Family Room" loading="lazy">
+                    <span class="room-price">From GHS 1000</span>
+                    <div class="room-info">
+                        <h4>Family Room</h4>
+                        <p>Perfect for families and groups</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content reveal">
+                    <h3>Your Home Away From Home in Pantang West</h3>
+                    <p>Welcome to Sleepy Eye Guest House, a premier accommodation destination nestled in the vibrant Pantang West, Adenta Municipal area of Greater Accra, Ghana. We pride ourselves on offering a serene and luxurious environment where guests can relax, unwind, and enjoy world-class hospitality.</p>
+                    <p>Whether you are visiting Accra for business, leisure, or a family getaway, our guest house provides the perfect sanctuary. With meticulously designed rooms, modern amenities, and a dedicated team committed to your comfort, every stay at Sleepy Eye is designed to be memorable.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-wifi"></i>
+                            <span>Free High-Speed Wi-Fi</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-car"></i>
+                            <span>Secure Parking</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-snowflake"></i>
+                            <span>Air Conditioned Rooms</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>24/7 Security</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tv"></i>
+                            <span>Flat Screen TV</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Complimentary Breakfast</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image reveal">
+                    <img src="img/Interior2.jpg" alt="Sleepy Eye Guest House Interior" loading="lazy">
+                    <div class="float-card">
+                        <h4>5+</h4>
+                        <p>Years of Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms" id="rooms">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our Rooms</h2>
+                <p>Choose from our selection of beautifully appointed rooms, each designed to provide maximum comfort and relaxation during your stay in Pantang West, Accra.</p>
+            </div>
+            <div class="rooms-grid">
+                <div class="room-card-full reveal">
+                    <div class="room-img">
+                        <img src="img/Rooms1.jpg" alt="Deluxe Room" loading="lazy">
+                        <span class="room-badge">Popular</span>
+                    </div>
+                    <div class="room-details">
+                        <h3>Deluxe Room</h3>
+                        <p>Experience spacious comfort with a king-sized bed, modern furnishings, and a private bathroom with premium amenities.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-wifi"></i> Wi-Fi</span>
+                            <span><i class="fas fa-snowflake"></i> A/C</span>
+                            <span><i class="fas fa-tv"></i> TV</span>
+                            <span><i class="fas fa-bath"></i> Ensuite</span>
+                        </div>
+                        <div class="room-footer">
+                            <div class="room-price-tag">GHS 600 <span>/ night</span></div>
+                            <a href="https://wa.me/233592864294?text=Hello,%20I%20would%20like%20to%20book%20the%20Deluxe%20Room%20at%20Sleepy%20Eye%20Guest%20House." class="btn-room" target="_blank">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card-full reveal">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&q=75" alt="Executive Suite" loading="lazy">
+                        <span class="room-badge">Premium</span>
+                    </div>
+                    <div class="room-details">
+                        <h3>Executive Suite</h3>
+                        <p>Our most luxurious offering featuring a separate living area, premium bedding, mini fridge, and exclusive bathroom amenities.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-wifi"></i> Wi-Fi</span>
+                            <span><i class="fas fa-snowflake"></i> A/C</span>
+                            <span><i class="fas fa-tv"></i> Smart TV</span>
+                            <span><i class="fas fa-couch"></i> Living Area</span>
+                            <span><i class="fas fa-wine-bottle"></i> Mini Fridge</span>
+                        </div>
+                        <div class="room-footer">
+                            <div class="room-price-tag">GHS 1200 <span>/ night</span></div>
+                            <a href="https://wa.me/233592864294?text=Hello,%20I%20would%20like%20to%20book%20the%20Executive%20Suite%20at%20Sleepy%20Eye%20Guest%20House." class="btn-room" target="_blank">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card-full reveal">
+                    <div class="room-img">
+                        <img src="img/Rooms2.jpg" alt="Standard Room" loading="lazy">
+                    </div>
+                    <div class="room-details">
+                        <h3>Standard Room</h3>
+                        <p>Comfortable and affordable accommodation perfect for solo travelers or couples seeking quality rest without breaking the bank.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-wifi"></i> Wi-Fi</span>
+                            <span><i class="fas fa-snowflake"></i> A/C</span>
+                            <span><i class="fas fa-tv"></i> TV</span>
+                            <span><i class="fas fa-shower"></i> Shower</span>
+                        </div>
+                        <div class="room-footer">
+                            <div class="room-price-tag">GHS 400 <span>/ night</span></div>
+                            <a href="https://wa.me/233592864294?text=Hello,%20I%20would%20like%20to%20book%20the%20Executive%20Suite%20at%20Sleepy%20Eye%20Guest%20House." class="btn-room" target="_blank">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card-full reveal">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500&q=75" alt="Family Room" loading="lazy">
+                        <span class="room-badge">Family</span>
+                    </div>
+                    <div class="room-details">
+                        <h3>Family Room</h3>
+                        <p>Spacious accommodation designed for families or groups, featuring multiple beds and ample space for everyone to relax.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-wifi"></i> Wi-Fi</span>
+                            <span><i class="fas fa-snowflake"></i> A/C</span>
+                            <span><i class="fas fa-bed"></i> 2-3 Beds</span>
+                            <span><i class="fas fa-users"></i> 4 Guests</span>
+                        </div>
+                        <div class="room-footer">
+                            <div class="room-price-tag">GHS 1000 <span>/ night</span></div>
+                            <a href="https://wa.me/233592864294?text=Hello,%20I%20would%20like%20to%20book%20the%20Family%20Room%20at%20Sleepy%20Eye%20Guest%20House." class="btn-room" target="_blank">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our Services</h2>
+                <p>At Sleepy Eye Guest House, we go above and beyond to ensure your stay is nothing short of exceptional. Discover our range of premium services.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-box reveal">
+                    <div class="service-icon"><i class="fas fa-wifi"></i></div>
+                    <h3>Free Wi-Fi</h3>
+                    <p>Stay connected with high-speed internet access available throughout the property, perfect for business and leisure.</p>
+                </div>
+                <div class="service-box reveal">
+                    <div class="service-icon"><i class="fas fa-car"></i></div>
+                    <h3>Secure Parking</h3>
+                    <p>Enjoy peace of mind with our spacious, well-lit, and secure on-site parking facility available for all guests.</p>
+                </div>
+                <div class="service-box reveal">
+                    <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Complimentary Breakfast</h3>
+                    <p>Start your day right with a delicious complimentary breakfast featuring local and continental options.</p>
+                </div>
+                <div class="service-box reveal">
+                    <div class="service-icon"><i class="fas fa-broom"></i></div>
+                    <h3>Daily Housekeeping</h3>
+                    <p>Our dedicated housekeeping team ensures your room remains spotless and comfortable throughout your stay.</p>
+                </div>
+                <div class="service-box reveal">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>24/7 Security</h3>
+                    <p>Your safety is our priority. Our premises are monitored around the clock with professional security personnel.</p>
+                </div>
+                <div class="service-box reveal">
+                    <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Concierge Service</h3>
+                    <p>Our friendly staff is always ready to assist with local recommendations, transport arrangements, and more.</p>
+                </div>
+                <div class="service-box reveal">
+                    <div class="service-icon"><i class="fas fa-tshirt"></i></div>
+                    <h3>Laundry Service</h3>
+                    <p>Convenient laundry and dry cleaning services available to keep you looking fresh during your stay.</p>
+                </div>
+                <div class="service-box reveal">
+                    <div class="service-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3>In-Room Dining</h3>
+                    <p>Enjoy delicious meals delivered directly to your room for the ultimate convenience and privacy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Photo Gallery</h2>
+                <p>Take a visual tour of Sleepy Eye Guest House and discover the beauty and comfort that awaits you.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <img src="img/Exterior9.jpg" alt="Guest House Exterior" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Exterior View</h4>
+                            <p>Welcome to Sleepy Eye</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="img/Rooms1.jpg" alt="Luxury Bedroom" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Luxury Bedroom</h4>
+                            <p>Deluxe Room Interior</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="img/Backup.jpg" alt="Spacious Car Park" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Backup Plant</h4>
+                            <p>No need to Worry</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="img/Exterior10.jpg" alt="Reception Area" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Reception Area</h4>
+                            <p>Warm Welcome Always</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="img/Rooms2.jpg" alt="Standard Room" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Standard Room</h4>
+                            <p>Comfortable & Cozy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="img/Interior9.jpg" alt="Interior" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Interior</h4>
+                            <p>Spacious for Everyone</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="img/Rooms3.jpg" alt="Dining Area" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Dining Area</h4>
+                            <p>Delicious Breakfast Served</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="img/Exterior5.jpg" alt="Parking Area" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Secure Parking</h4>
+                            <p>Safe & Spacious</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Guest Reviews</h2>
+                <p>See what our guests have to say about their experience at Sleepy Eye Guest House in Pantang West, Accra.</p>
+                <div class="google-rating">
+                    <div class="rating-oval">
+                        <i class="fab fa-google"></i>
+                        <div class="rating-stars">
+                            <span class="rating-score">4.2</span>
+                            <div class="star-row">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <span class="rating-count">56+ Reviews</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card reveal">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Sleepy Eye Guest House is about 7-10mins walking distance from FOCOS Orthopaedic Clinic. I would definitely recommend this place if you have a ward/relative at Focos and live far from the hospital....."</p>
+                    <br><div class="testimonial-author">
+                        <div class="author-avatar">SO</div>
+                        <div class="author-info">
+                            <h4>Sasha O.</h4>
+                            <p>Business Traveler</p>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Stay</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"My husband and two young kids stayed at Sleepy eye guest house this August. The rooms were clean and spacious and the staff was friendly and very accommodating. They also serve delicious and affordable meals. I strongly recommend you book at this guest house."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">BB</div>
+                        <div class="author-info">
+                            <h4>Batenga B.</h4>
+                            <p>Family Vacation</p>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Stay</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Best guest house in Pantang West! The Executive Suite exceeded my expectations with its modern decor and separate living area. The air conditioning worked perfectly, and the staff went above and beyond. Great value for money!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>John M.</h4>
+                            <p>Solo Traveler</p>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Stay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our Location</h2>
+                <p>Sleepy Eye Guest House is conveniently located in Pantang West, Adenta Municipal, Greater Accra Region, Ghana. Easy access to major roads and attractions.</p>
+            </div>
+            <div class="location-grid">
+                <div class="location-info reveal">
+                    <h3>Find Us in Pantang West</h3>
+                    <p>We are situated in the heart of Madina, one of Accra's most vibrant and accessible neighborhoods. Our location offers the perfect balance of tranquility and convenience.</p>
+                    <div class="location-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Pantang West, Adenta Municipal, Greater Accra Region, Ghana</p>
+                        </div>
+                    </div>
+                    <div class="location-detail">
+                        <i class="fas fa-road"></i>
+                        <div>
+                            <h4>Nearby Landmarks</h4>
+                            <p>Pantang Hospital, University of Ghana, Accra Mall</p>
+                        </div>
+                    </div>
+                    <div class="location-detail">
+                        <i class="fas fa-plane"></i>
+                        <div>
+                            <h4>Airport Distance</h4>
+                            <p>Approximately 20 minutes from Kotoka International Airport</p>
+                        </div>
+                    </div>
+                    <div class="location-detail">
+                        <i class="fas fa-bus"></i>
+                        <div>
+                            <h4>Transport</h4>
+                            <p>Easy access to public transport and taxi services</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container reveal">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.0!2d-0.1852092!3d5.7334373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf774263559b4f%3A0xf0115dba75b92720!2sSleepy%20eye%20guest%20house!5e0!3m2!1sen!2sgh!4v1700000000000!5m2!1sen!2sgh" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Sleepy Eye Guest House Location Map">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Get In Touch</h2>
+                <p>Ready to book? Reach us instantly — we are available 24/7.</p>
+            </div>
+            <div class="contact-grid">
+                <a href="https://wa.me/233592864294?text=Hello%20Sleepy%20Eye%20Guest%20House,%20I%20would%20like%20to%20book%20a%20room.%20Please%20assist%20me." class="contact-card reveal" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>+233 59 286 4294</p>
+                </a>
+                <a href="tel:+233592864294" class="contact-card reveal">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+233 59 286 4294</p>
+                </a>
+                <a href="mailto:sleepyeyeguesthouse@gmail.com" class="contact-card reveal">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>sleepyeyeguesthouse@gmail.com</p>
+                </a>
+                <a href="#location" class="contact-card reveal">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>Pantang West, Accra</p>
+                </a>
+            </div>
+            <div class="social-links reveal">
+                <a href="https://instagram.com/sleepyeyeguesthouse" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/SleepyEyeGuestHouse" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/233592864294" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:sleepyeyeguesthouse@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3><i class="fas fa-moon"></i> Sleepy Eye Guest House</h3>
+                <p>Your premier destination for luxury accommodation in Pantang West, Greater Accra. Experience comfort, security, and world-class hospitality at affordable rates.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#rooms">Our Rooms</a>
+                <a href="#services">Services</a>
+            </div>
+            <div class="footer-col">
+                <h4>Information</h4>
+                <a href="#gallery">Gallery</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#location">Location</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="tel:+233592864294"><i class="fas fa-phone"></i> +233 59 286 4294</a>
+                <a href="mailto:sleepyeyeguesthouse@gmail.com"><i class="fas fa-envelope"></i> Email Us</a>
+                <a href="https://wa.me/233592864294" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://instagram.com/sleepyeyeguesthouse" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sleepy Eye Guest House. All rights reserved. | Pantang West, Adenta Municipal, Greater Accra, Ghana</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Register GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Fallback: ensure all content is visible after 2.5s even if animations fail
+        setTimeout(() => {
+            document.querySelectorAll('.reveal, .service-box, .room-card-full, .gallery-item, .testimonial-card, .contact-card').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+                el.style.visibility = 'visible';
+            });
+        }, 2500);
+
+        // Sticky Booking Bar
+        const bookingBar = document.getElementById('bookingBar');
+        const mainNav = document.getElementById('mainNav');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                bookingBar.classList.add('visible');
+                mainNav.classList.add('scrolled');
+            } else {
+                bookingBar.classList.remove('visible');
+                mainNav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+
+        function openMenu() {
+            mobileMenu.classList.add('open');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        // Add animate class only if JS is running (elements already visible by default)
+        revealElements.forEach(el => el.classList.add('animate'));
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // GSAP Scroll Animations
+        gsap.utils.toArray('.service-box').forEach((box, i) => {
+            gsap.from(box, {
+                scrollTrigger: {
+                    trigger: box,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.6,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        gsap.utils.toArray('.room-card-full').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                },
+                y: 60,
+                opacity: 0,
+                duration: 0.7,
+                delay: i * 0.15,
+                ease: 'power3.out'
+            });
+        });
+
+        gsap.utils.toArray('.gallery-item').forEach((item, i) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 90%',
+                    toggleActions: 'play none none none'
+                },
+                scale: 0.9,
+                opacity: 0,
+                duration: 0.5,
+                delay: i * 0.08,
+                ease: 'power2.out'
+            });
+        });
+
+        gsap.utils.toArray('.testimonial-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                },
+                x: 50,
+                opacity: 0,
+                duration: 0.6,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        gsap.utils.toArray('.contact-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                },
+                y: 40,
+                opacity: 0,
+                duration: 0.5,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Auto-scroll room preview
+        const roomSlider = document.querySelector('.room-slider');
+        if (roomSlider) {
+            let scrollAmount = 0;
+            const scrollStep = 296; // card width + gap
+            const maxScroll = roomSlider.scrollWidth - roomSlider.clientWidth;
+
+            setInterval(() => {
+                if (roomSlider.scrollLeft >= maxScroll) {
+                    roomSlider.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    roomSlider.scrollBy({ left: scrollStep, behavior: 'smooth' });
+                }
+            }, 4000);
+        }
+
+        // Add hover micro-interactions
+        document.querySelectorAll('.feature-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                gsap.to(this.querySelector('i'), {
+                    rotation: 360,
+                    duration: 0.6,
+                    ease: 'power2.out'
+                });
+            });
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBg = document.querySelector('.hero-bg img');
+            if (heroBg) {
+                heroBg.style.transform = `translateY(${scrolled * 0.5}px) scale(${1 + scrolled * 0.0005})`;
+            }
+        });
+
+        // Preload critical images
+        const criticalImages = [
+            'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=75',
+            'https://images.unsplash.com/photo-1631049307264-da0ec9dacf04?w=500&q=75'
+        ];
+
+        criticalImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "name": "Sleepy Eye Guest House",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80",
+        "description": "Luxury guest house offering premium accommodation in Pantang West, Greater Accra, Ghana. Features free Wi-Fi, secure parking, air-conditioned rooms, and exceptional service.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Madina",
+            "addressRegion": "Greater Accra",
+            "addressCountry": "GH"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "5.7334373",
+            "longitude": "-0.1852092"
+        },
+        "telephone": "+233592864294",
+        "email": "sleepyeyeguesthouse@gmail.com",
+        "url": "https://sleepyeyeguesthouse.com",
+        "priceRange": "GHS 180 - GHS 400",
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Free Wi-Fi",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Secure Parking",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Air Conditioning",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "24/7 Security",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Complimentary Breakfast",
+                "value": true
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "127"
+        },
+        "sameAs": [
+            "https://instagram.com/sleepyeyeguesthouse",
+            "https://facebook.com/SleepyEyeGuestHouse"
+        ]
+    }
+    </script>
+</body>
+</html>
