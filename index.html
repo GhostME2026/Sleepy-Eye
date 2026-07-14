@@ -1552,36 +1552,56 @@
             .hero {
                 min-height: 100vh;
                 min-height: 100dvh;
-                align-items: flex-start;
-                padding-top: 90px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 80px 20px 40px;
+            }
+            .hero-bg img {
+                animation: none;
+                transform: scale(1.05);
             }
             .hero-content {
                 margin-top: 0;
-                padding-top: 20px;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 0;
             }
             .hero-badge {
-                font-size: 0.7rem;
-                padding: 6px 14px;
-                margin-bottom: 16px;
+                font-size: 0.65rem;
+                padding: 5px 12px;
+                margin-bottom: 14px;
+                letter-spacing: 0.3px;
             }
             .hero-badge i {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
             .hero h1 {
-                font-size: clamp(2rem, 8vw, 2.8rem);
-                margin-bottom: 14px;
+                font-size: clamp(1.8rem, 7vw, 2.6rem);
+                margin-bottom: 12px;
+                line-height: 1.15;
             }
             .hero p {
-                font-size: 0.9rem;
-                margin-bottom: 28px;
-                padding: 0 12px;
+                font-size: 0.85rem;
+                margin-bottom: 24px;
+                padding: 0 8px;
+                line-height: 1.6;
+                max-width: 340px;
             }
             .hero-buttons {
                 gap: 10px;
+                width: 100%;
+                max-width: 320px;
+                flex-direction: column;
             }
             .btn-primary, .btn-secondary {
-                padding: 12px 28px;
+                padding: 14px 24px;
                 font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
             }
             .room-preview {
                 display: none !important;
@@ -2756,41 +2776,70 @@
             const galleryGrid = document.querySelector('.gallery-grid');
             if (!galleryGrid) return;
 
-            let galleryInterval;
+            let galleryInterval = null;
+            let isVisible = false;
             const galleryScrollStep = 294;
 
-            function startGalleryScroll() {
-                if (window.innerWidth > 768) {
-                    if (galleryInterval) clearInterval(galleryInterval);
-                    return;
+            function doScroll() {
+                if (!isVisible || window.innerWidth > 768) return;
+                const maxScroll = galleryGrid.scrollWidth - galleryGrid.clientWidth;
+                if (maxScroll <= 0) return;
+                if (galleryGrid.scrollLeft >= maxScroll - 10) {
+                    galleryGrid.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    galleryGrid.scrollBy({ left: galleryScrollStep, behavior: 'smooth' });
                 }
-                const galleryMaxScroll = galleryGrid.scrollWidth - galleryGrid.clientWidth;
-                if (galleryMaxScroll <= 0) return;
-
-                galleryInterval = setInterval(() => {
-                    const galleryMaxScroll = galleryGrid.scrollWidth - galleryGrid.clientWidth;
-                    if (galleryGrid.scrollLeft >= galleryMaxScroll - 10) {
-                        galleryGrid.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        galleryGrid.scrollBy({ left: galleryScrollStep, behavior: 'smooth' });
-                    }
-                }, 4000);
             }
 
-            // Start on load and recalculate on resize
-            startGalleryScroll();
-            window.addEventListener('resize', () => {
+            function startGalleryScroll() {
                 if (galleryInterval) clearInterval(galleryInterval);
+                if (!isVisible || window.innerWidth > 768) return;
+                galleryInterval = setInterval(doScroll, 3500);
+            }
+
+            function stopGalleryScroll() {
+                if (galleryInterval) {
+                    clearInterval(galleryInterval);
+                    galleryInterval = null;
+                }
+            }
+
+            // IntersectionObserver - only scroll when gallery is visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    isVisible = entry.isIntersecting;
+                    if (isVisible) {
+                        startGalleryScroll();
+                    } else {
+                        stopGalleryScroll();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(galleryGrid);
+
+            // Handle resize
+            window.addEventListener('resize', () => {
+                stopGalleryScroll();
                 startGalleryScroll();
             });
 
-            // Pause on touch, resume after
+            // Pause on touch/interaction, resume after
             galleryGrid.addEventListener('touchstart', () => {
-                if (galleryInterval) clearInterval(galleryInterval);
+                stopGalleryScroll();
             }, { passive: true });
+
             galleryGrid.addEventListener('touchend', () => {
-                setTimeout(startGalleryScroll, 3000);
+                if (isVisible) setTimeout(startGalleryScroll, 4000);
             }, { passive: true });
+
+            galleryGrid.addEventListener('mousedown', () => {
+                stopGalleryScroll();
+            });
+
+            galleryGrid.addEventListener('mouseup', () => {
+                if (isVisible) setTimeout(startGalleryScroll, 4000);
+            });
         })();
 
 </script>
