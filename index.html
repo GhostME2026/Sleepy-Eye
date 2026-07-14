@@ -1584,41 +1584,7 @@
                 font-size: 0.9rem;
             }
             .room-preview {
-                display: block !important;
-                position: relative;
-                bottom: auto;
-                left: auto;
-                transform: none;
-                width: 100%;
-                max-width: 100%;
-                margin-top: 30px;
-                padding: 0 16px;
-            }
-            .room-slider {
-                gap: 12px;
-                padding: 8px 4px;
-            }
-            .room-card {
-                flex: 0 0 220px;
-                border-radius: 14px;
-            }
-            .room-card img {
-                height: 130px;
-            }
-            .room-card .room-info {
-                padding: 12px;
-            }
-            .room-card .room-info h4 {
-                font-size: 0.9rem;
-            }
-            .room-card .room-info p {
-                font-size: 0.75rem;
-            }
-            .room-card .room-price {
-                font-size: 0.7rem;
-                padding: 4px 10px;
-                top: 8px;
-                right: 8px;
+                display: none !important;
             }
         }
 
@@ -1700,6 +1666,51 @@
             }
         }
 
+
+
+        /* ===== ABOUT FEATURES MOBILE ===== */
+        @media (max-width: 768px) {
+            .about {
+                padding: 60px 16px;
+            }
+            .about-content h3 {
+                font-size: 1.6rem;
+            }
+            .about-content p {
+                font-size: 0.9rem;
+            }
+            .features-list {
+                gap: 10px;
+                margin-top: 24px;
+            }
+            .feature-item {
+                padding: 8px 10px;
+                gap: 8px;
+                border-radius: 10px;
+            }
+            .feature-item i {
+                width: 32px;
+                height: 32px;
+                font-size: 0.85rem;
+                border-radius: 8px;
+            }
+            .feature-item span {
+                font-size: 0.8rem;
+            }
+            .about-image .float-card {
+                padding: 16px;
+                bottom: -12px;
+                right: -12px;
+                border-radius: 12px;
+            }
+            .about-image .float-card h4 {
+                font-size: 1.5rem;
+            }
+            .about-image .float-card p {
+                font-size: 0.8rem;
+            }
+        }
+
         /* ===== CONTACT MOBILE IMPROVEMENTS ===== */
         @media (max-width: 768px) {
             .contact {
@@ -1743,6 +1754,48 @@
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
+            }
+        }
+
+
+
+        /* ===== LOCATION MOBILE ===== */
+        @media (max-width: 768px) {
+            .location {
+                padding: 60px 16px 60px;
+            }
+            .location-info h3 {
+                font-size: 1.4rem;
+                margin-bottom: 14px;
+            }
+            .location-info > p {
+                font-size: 0.9rem;
+                margin-bottom: 18px;
+            }
+            .location-detail {
+                padding: 12px;
+                margin-bottom: 12px;
+                gap: 12px;
+                border-radius: 10px;
+            }
+            .location-detail i {
+                width: 36px;
+                height: 36px;
+                font-size: 0.85rem;
+                border-radius: 8px;
+            }
+            .location-detail h4 {
+                font-size: 0.85rem;
+                margin-bottom: 2px;
+            }
+            .location-detail p {
+                font-size: 0.75rem;
+                line-height: 1.4;
+            }
+            .map-container {
+                min-height: 300px;
+                border-radius: 16px;
+                margin-top: 16px;
             }
         }
 
@@ -2699,20 +2752,46 @@
     }
     
         // Gallery auto-scroll for mobile
-        const galleryGrid = document.querySelector('.gallery-grid');
-        if (galleryGrid && window.innerWidth <= 768) {
-            let galleryScrollAmount = 0;
-            const galleryScrollStep = 294; // gallery item width + gap
-            const galleryMaxScroll = galleryGrid.scrollWidth - galleryGrid.clientWidth;
+        (function() {
+            const galleryGrid = document.querySelector('.gallery-grid');
+            if (!galleryGrid) return;
 
-            setInterval(() => {
-                if (galleryGrid.scrollLeft >= galleryMaxScroll - 10) {
-                    galleryGrid.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    galleryGrid.scrollBy({ left: galleryScrollStep, behavior: 'smooth' });
+            let galleryInterval;
+            const galleryScrollStep = 294;
+
+            function startGalleryScroll() {
+                if (window.innerWidth > 768) {
+                    if (galleryInterval) clearInterval(galleryInterval);
+                    return;
                 }
-            }, 5000);
-        }
+                const galleryMaxScroll = galleryGrid.scrollWidth - galleryGrid.clientWidth;
+                if (galleryMaxScroll <= 0) return;
+
+                galleryInterval = setInterval(() => {
+                    const galleryMaxScroll = galleryGrid.scrollWidth - galleryGrid.clientWidth;
+                    if (galleryGrid.scrollLeft >= galleryMaxScroll - 10) {
+                        galleryGrid.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        galleryGrid.scrollBy({ left: galleryScrollStep, behavior: 'smooth' });
+                    }
+                }, 4000);
+            }
+
+            // Start on load and recalculate on resize
+            startGalleryScroll();
+            window.addEventListener('resize', () => {
+                if (galleryInterval) clearInterval(galleryInterval);
+                startGalleryScroll();
+            });
+
+            // Pause on touch, resume after
+            galleryGrid.addEventListener('touchstart', () => {
+                if (galleryInterval) clearInterval(galleryInterval);
+            }, { passive: true });
+            galleryGrid.addEventListener('touchend', () => {
+                setTimeout(startGalleryScroll, 3000);
+            }, { passive: true });
+        })();
 
 </script>
 </body>
